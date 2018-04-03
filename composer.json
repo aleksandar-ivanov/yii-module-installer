@@ -3,7 +3,7 @@
     "description": "Module installer for Yii CMS",
     "type": "composer-plugin",
     "extra" : {
-        "class" : ""
+        "class" : "aivanov\\composer\\ModuleInstallerPlugin"
     },
     "autoload": {
         "psr-0": {"aivanov\\composer": "./"}
