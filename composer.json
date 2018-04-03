@@ -14,7 +14,9 @@
             "email": "aleksandar.ivanov@mentormate.com"
         }
     ],
-    "require": {},
+    "require": {
+        "composer-plugin-api": "^1.0"
+    },
     "require-dev": {
         "composer/composer": "^1.3"
     }
