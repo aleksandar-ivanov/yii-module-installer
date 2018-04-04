@@ -16,7 +16,7 @@ class ModuleInstaller extends LibraryInstaller
     {
         $prefix = static::MODULE_PREFIX;
 
-        $givenPrefix = substr($package->getPrettyName(), strpos($package->getPrettyName(), '/') + 1, strlen($prefix));
+        $givenPrefix = substr($package->getPrettyName(), strpos($package->getPrettyName(), '/') + 1, strlen($prefix) + 1);
 
         if ($givenPrefix !== ($prefix . '-')) {
             throw new \InvalidArgumentException("Module names must be prefixed with {$prefix}- ... Found $givenPrefix");
