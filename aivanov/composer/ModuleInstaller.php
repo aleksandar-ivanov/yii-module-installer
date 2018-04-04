@@ -19,7 +19,7 @@ class ModuleInstaller extends LibraryInstaller
         $givenPrefix = substr($package->getPrettyName(), 0, strlen($prefix));
 
         if ($givenPrefix !== ($prefix . '-')) {
-            throw new \InvalidArgumentException("Module names must be prefixed with {$prefix}-");
+            throw new \InvalidArgumentException("Module names must be prefixed with {$prefix}- ... Found $givenPrefix");
         }
 
         return $this->installPath . DIRECTORY_SEPARATOR . substr($package->getPrettyName(), strlen($prefix) + 1);
