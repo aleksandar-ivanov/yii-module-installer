@@ -22,7 +22,10 @@ class ModuleInstaller extends LibraryInstaller
             throw new \InvalidArgumentException("Module names must be prefixed with {$prefix}- ... Found $givenPrefix");
         }
 
-        return $this->installPath . DIRECTORY_SEPARATOR . substr($package->getPrettyName(), strlen($prefix) + 1);
+        $packageParts = explode('-',substr($package->getPrettyName(), strpos($package->getPrettyName(), '/') + 1));
+        $packageName = implode('-', array_splice($packageParts, 2));
+
+        return $this->installPath . DIRECTORY_SEPARATOR . $packageName;
     }
 
     /**
